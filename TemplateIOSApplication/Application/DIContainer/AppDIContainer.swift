@@ -19,7 +19,7 @@ class AppDIContainer: ObservableObject {
     }
     
     lazy var animalRepo: AnimalRepository = {
-        AnimalRepositoryIml(service: dependencies.animalService)
+        AnimalRepositoryIml(dataTransferService: DefaultDataTransferService(service: DefaultNetworkService()))
     }()
     
     lazy var animalUseCase: FetchAnimalUseCase = {

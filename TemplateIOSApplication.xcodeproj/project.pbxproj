@@ -38,6 +38,9 @@
 		A25647ED2AF3A10B003C105E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25647EC2AF3A10B003C105E /* Network.swift */; };
 		A2B074ED2AF4ED0500876F25 /* NetworkTestVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B074EC2AF4ED0500876F25 /* NetworkTestVM.swift */; };
 		A2B074F22AF4F00B00876F25 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B074F12AF4F00B00876F25 /* AppDIContainer.swift */; };
+		A2B074F72AF8A8A000876F25 /* APIEndpint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B074F62AF8A8A000876F25 /* APIEndpint.swift */; };
+		A2B074FA2AF8A96900876F25 /* AnimalsRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B074F92AF8A96900876F25 /* AnimalsRequestModel.swift */; };
+		A2B074FC2AF8D52200876F25 /* DataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B074FB2AF8D52200876F25 /* DataTransferService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +95,9 @@
 		A29F6C392AF3A99300C79062 /* TemplateIOSApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemplateIOSApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2B074EC2AF4ED0500876F25 /* NetworkTestVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTestVM.swift; sourceTree = "<group>"; };
 		A2B074F12AF4F00B00876F25 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		A2B074F62AF8A8A000876F25 /* APIEndpint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpint.swift; sourceTree = "<group>"; };
+		A2B074F92AF8A96900876F25 /* AnimalsRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsRequestModel.swift; sourceTree = "<group>"; };
+		A2B074FB2AF8D52200876F25 /* DataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +153,7 @@
 				8BD2D7272AF7D87400CCF197 /* HeaderDescriber.swift */,
 				8BD2D7292AF7D97000CCF197 /* HeaderDescriberIml.swift */,
 				8BD2D72B2AF7DA7500CCF197 /* HeaderBuilder.swift */,
+				A2B074FB2AF8D52200876F25 /* DataTransferService.swift */,
 			);
 			path = ModularNetworking;
 			sourceTree = "<group>";
@@ -293,6 +300,7 @@
 		A225493A2AF3490000F8B8ED /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				A2B074F52AF8A87200876F25 /* NetworkSerivce */,
 				A21ACD852AF4E63000AA385D /* Repositories */,
 			);
 			path = Data;
@@ -374,6 +382,23 @@
 				A2B074F12AF4F00B00876F25 /* AppDIContainer.swift */,
 			);
 			path = DIContainer;
+			sourceTree = "<group>";
+		};
+		A2B074F52AF8A87200876F25 /* NetworkSerivce */ = {
+			isa = PBXGroup;
+			children = (
+				A2B074F82AF8A95300876F25 /* Animals */,
+				A2B074F62AF8A8A000876F25 /* APIEndpint.swift */,
+			);
+			path = NetworkSerivce;
+			sourceTree = "<group>";
+		};
+		A2B074F82AF8A95300876F25 /* Animals */ = {
+			isa = PBXGroup;
+			children = (
+				A2B074F92AF8A96900876F25 /* AnimalsRequestModel.swift */,
+			);
+			path = Animals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -512,6 +537,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2B074FC2AF8D52200876F25 /* DataTransferService.swift in Sources */,
+				A2B074FA2AF8A96900876F25 /* AnimalsRequestModel.swift in Sources */,
 				A21ACD6E2AF4A9F200AA385D /* Resource.swift in Sources */,
 				8BD2D72A2AF7D97000CCF197 /* HeaderDescriberIml.swift in Sources */,
 				A21ACD822AF4E2B700AA385D /* Encodable.swift in Sources */,
@@ -527,6 +554,7 @@
 				A25647ED2AF3A10B003C105E /* Network.swift in Sources */,
 				8BD2D7282AF7D87400CCF197 /* HeaderDescriber.swift in Sources */,
 				A2B074ED2AF4ED0500876F25 /* NetworkTestVM.swift in Sources */,
+				A2B074F72AF8A8A000876F25 /* APIEndpint.swift in Sources */,
 				8BD2D7222AF7549D00CCF197 /* NetworkService.swift in Sources */,
 				A22549182AF345F500F8B8ED /* TemplateIOSApplication.xcdatamodeld in Sources */,
 				A225490C2AF345F200F8B8ED /* TemplateIOSApplicationApp.swift in Sources */,
@@ -700,6 +728,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TemplateIOSApplication/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -732,6 +761,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TemplateIOSApplication/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

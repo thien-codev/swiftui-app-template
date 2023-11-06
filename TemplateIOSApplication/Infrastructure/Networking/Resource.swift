@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-typealias JSONDictionary = [String: Any]
+//typealias JSONDictionary = [String: Any]
 
 struct Resource<T> {
     
@@ -54,16 +54,23 @@ enum MyMethod {
 
 enum AnimalURL: URLExpected {
     
+    case animals
+    case animalDetail
     case imageSearch(params: String)
     case imageDetail(params: String)
     
     var baseUrlString: String { Bundle.main.plistValue(Bundle.Keys.animalBaseUrl) ?? .init() }
+    
     var pathString: String {
         switch self {
         case .imageSearch:
             return "/v1/images/search?%@"
         case .imageDetail:
             return "/v1/images/%@"
+        case .animals:
+            return "/v1/images/search"
+        case .animalDetail:
+            return "/v1/images/"
         }
     }
     var url: URL? {
@@ -74,6 +81,10 @@ enum AnimalURL: URLExpected {
         switch self {
         case .imageSearch(let params), .imageDetail(let params):
             return params
+        case .animals:
+            return ""
+        case .animalDetail:
+            return ""
         }
     }
 }
