@@ -9,4 +9,7 @@ import Foundation
 
 protocol AnimalRepository {
     func getAnimals() async -> [Animal]
+    func getMore() async -> [Animal]
+    func deleteAnimal(_ animal: Animal)
+    func searchAnimals(_ str: String) async -> [Animal]
 }

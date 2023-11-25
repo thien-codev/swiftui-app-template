@@ -9,6 +9,9 @@ import Foundation
 
 protocol FetchAnimalUseCase {
     func getAnimals() async -> [Animal]
+    func getMore() async -> [Animal]
+    func deleteAnimal(_ animal: Animal)
+    func searchAnimals(_ str: String) async -> [Animal]
 }
 
 class FetchAnimalUseCaseIml: FetchAnimalUseCase {
@@ -20,5 +23,17 @@ class FetchAnimalUseCaseIml: FetchAnimalUseCase {
     
     func getAnimals() async -> [Animal] {
         await repository.getAnimals()
+    }
+    
+    func getMore() async -> [Animal] {
+        await repository.getMore()
+    }
+    
+    func deleteAnimal(_ animal: Animal) {
+        repository.deleteAnimal(animal)
+    }
+    
+    func searchAnimals(_ str: String) async -> [Animal] {
+        await repository.searchAnimals(str)
     }
 }

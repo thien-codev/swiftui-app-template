@@ -14,12 +14,11 @@ struct TemplateIOSApplicationApp: App {
         appDIContainer = AppDIContainer(dependencies: .init(animalService: AnimalService(network: Network())))
     }
     
-    let persistenceController = PersistenceController.shared
     let appDIContainer: AppDIContainer
 
     var body: some Scene {
         WindowGroup {
-            NetworkTestView().environmentObject(appDIContainer.networkTestVM)
+            OnboardingView().environmentObject(appDIContainer.animalsViewVM)
         }
     }
 }

@@ -42,7 +42,7 @@ class DefaultNetworkService {
     private let session: NetworkSessionManager
     private var task: NetworkCancellable?
     
-    init(session: NetworkSessionManager = DefaultNetworkSessionManager()) {
+    init(session: NetworkSessionManager) {
         self.session = session
     }
 }
@@ -66,7 +66,7 @@ extension DefaultNetworkService: NetworkService {
     }
 }
 
-class DefaultNetworkSessionManager: NetworkSessionManager {
+class AFNetworkSessionManager: NetworkSessionManager {
     func request(_ url: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> Void) -> NetworkCancellable {
         AF.request(url)
             .validate()

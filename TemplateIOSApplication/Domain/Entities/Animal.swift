@@ -8,8 +8,8 @@
 import Foundation
 
 struct Animal: Codable {
-    let id: String
-    let url: String
+    let id: String?
+    let url: String?
     let width, height: Double
     let mimeType: String?
     let breeds: [Breed]?

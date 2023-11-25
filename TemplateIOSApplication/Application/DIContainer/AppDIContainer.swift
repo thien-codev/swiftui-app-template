@@ -19,14 +19,15 @@ class AppDIContainer: ObservableObject {
     }
     
     lazy var animalRepo: AnimalRepository = {
-        AnimalRepositoryIml(dataTransferService: DefaultDataTransferService(service: DefaultNetworkService()))
+        AnimalRepositoryIml(dataTransferService: DefaultDataTransferService(service: DefaultNetworkService(session: AFNetworkSessionManager())), 
+                            animalsStorage: CoreDataAnimalsStorage(coreDataStorage: .manager))
     }()
     
     lazy var animalUseCase: FetchAnimalUseCase = {
         FetchAnimalUseCaseIml(repo: animalRepo)
     }()
     
-    lazy var networkTestVM: NetworkTestVM = {
-        NetworkTestVM(useCases: animalUseCase)
+    lazy var animalsViewVM: AnimalsViewVM = {
+        AnimalsViewVM(useCases: animalUseCase)
     }()
 }
